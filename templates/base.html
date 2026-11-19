@@ -1,0 +1,62 @@
+
+<!--
+    PLANTILLA BASE: 
+
+    Después de desarrollar las páginas individuales, noté que varios
+    elementos del código HTML se repetían, como la estructura general,
+    la cabecera, el pie de página y la conexión con el archivo CSS.
+
+    Para evitar repetir código, decidí crear esta plantilla base,
+    que contiene los elementos comunes de la aplicación.
+
+    Mediante los bloques de Jinja, cada página puede reutilizar
+    esta estructura y personalizar su título, encabezado y contenido
+    según corresponda.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block titulo %}Evaluación 3 - Programación Web{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="cabecera-contenido">
+
+            <div>
+                {% block encabezado %}
+                    <h1>𐓏 PROGRAMACIÓN WEB 𐓏</h1>
+                    <p>Evaluación Unidad 3</p>
+                {% endblock %}
+            </div>
+
+            {% if request.endpoint == "inicio" %}
+                <a href="/historial" class="boton-historial">
+                    ◷ HISTORIAL
+                </a>
+            {% endif %}
+
+        </div>
+
+    </header>
+
+    <main>
+        {% block contenido %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Haku Manriquez Vega - 4B - Iplacex 𐓏</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block titulo %}Ejercicio 2 - Nombres y caracteres{% endblock %}
+
+{% block encabezado %}
+    <h1>𐓏 EJERCICIO 02 𐓏</h1>
+    <p>Nombres y caracteres</p>
+{% endblock %}
+
+{% block contenido %}
+
+    <h2>Compara los nombres y descubre cuál tiene mayor cantidad de caracteres.</h2>
+
+    <div class="contenedor-ejercicio">
+
+        <form action="/ejercicio2" method="POST">
+
+            <label>Nombre 1:</label>
+            <input type="text" name="nombre1" required>
+
+            <label>Nombre 2:</label>
+            <input type="text" name="nombre2" required>
+
+            <label>Nombre 3:</label>
+            <input type="text" name="nombre3" required>
+
+            <button type="submit">COMPARAR NOMBRES</button>
+
+        </form>
+
+        {% if error %}
+            <p class="mensaje-error">{{ error }}</p>
+        {% endif %}
+
+        {% if resultado %}
+
+            <section class="tarjeta-resultado">
+
+                <h2>Resultado de la comparación</h2>
+
+                <p>{{ resultado }}</p>
+
+                <h3>{{ detalle }}</h3>
+
+            </section>
+
+        {% endif %}
+
+    </div>
+
+    <div class="volver-inicio">
+        <a href="/">← VOLVER AL INICIO</a>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block titulo %}Historial de actividades{% endblock %}
+
+{% block encabezado %}
+    <h1>𐓏 HISTORIAL 𐓏</h1>
+    <p>Registro de actividades realizadas</p>
+{% endblock %}
+
+{% block contenido %}
+
+    <h2>Historial de ejercicios</h2>
+
+    <div class="contenedor-ejercicio">
+
+        {% if registros %}
+
+            {% for registro in registros %}
+
+                <section class="tarjeta-resultado">
+
+                    <h2>{{ registro.ejercicio }}</h2>
+
+                    {% if registro.ejercicio == "Notas y asistencia" %}
+
+                        <p>Nota 1: {{ registro.nota1 }}</p>
+                        <p>Nota 2: {{ registro.nota2 }}</p>
+                        <p>Nota 3: {{ registro.nota3 }}</p>
+                        <p>Asistencia: {{ registro.asistencia }}%</p>
+                        <p>Promedio: {{ registro.promedio }}</p>
+
+                    {% else %}
+
+                        <p>Nombre 1: {{ registro.nombre1 }}</p>
+                        <p>Nombre 2: {{ registro.nombre2 }}</p>
+                        <p>Nombre 3: {{ registro.nombre3 }}</p>
+                        <p>{{ registro.detalle }}</p>
+
+                    {% endif %}
+
+                    <h3>{{ registro.resultado }}</h3>
+
+                    <div class="zona-eliminar">
+
+                        <form action="/eliminar/{{ registro.id }}" method="POST">
+
+                            <button type="submit" class="boton-eliminar">
+                                🗑 ELIMINAR
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>Aún no hay actividades registradas.</p>
+
+        {% endif %}
+
+    </div>
+
+    <div class="volver-inicio">
+        <a href="/">← VOLVER AL INICIO</a>
+    </div>
+
+{% endblock %}

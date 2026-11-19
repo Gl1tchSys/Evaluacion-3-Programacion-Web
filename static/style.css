@@ -1,0 +1,386 @@
+/* =====================================================
+1. ESTILOS GENERALES
+Configuración principal de toda la aplicación.
+Define los colores de fondo, texto y tipografía.
+   ===================================================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #171717;
+    color: #FFF6D5;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =====================================================
+2. CABECERA
+Define la apariencia del encabezado y sus textos.
+   ===================================================== */
+
+header {
+    background-color: #FFD928;
+    color: #171717;
+    text-align: center;
+    padding: 1px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+
+/* =====================================================
+3. MENU PRINCIPAL
+Organiza las tarjetas de los ejercicios y define
+su apariencia, textos y enlaces.
+   ===================================================== */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+/* Tarjetas individuales de cada ejercicio */
+
+.card {
+    background-color: #242424;
+    border: 2px solid #FFD928;
+    border-radius: 15px;
+    padding: 25px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Título superior de cada tarjeta */
+
+.card h3 {
+    color: #FFD928;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Nombre del ejercicio */
+
+.card h2 {
+    color: #FFF6D5;
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+/* Descripción del ejercicio */
+
+.card p {
+    color: #CCCCCC;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Enlace para comenzar cada ejercicio */
+
+.card a {
+    display: inline-block;
+    background-color: #FFD928;
+    color: #171717;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+/* Efecto al pasar el cursor sobre el enlace */
+
+.card a:hover {
+    background-color: #FFB900;
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+4. PIE DE PAGINA
+Define la apariencia del footer y la información
+que aparece al final de las páginas.
+   ===================================================== */
+
+footer {
+    background-color: #242424;
+    color: #FFD928;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+
+/* =====================================================
+5. TITULOS DEL CONTENIDO
+Personaliza los títulos principales que aparecen
+Centro del contenido de las páginas.
+   ===================================================== */
+
+main > h2 {
+    color: #FFD928;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+6. FORMULARIOS
+Define la estructura y apariencia de los formularios,
+sus etiquetas, campos de entrada y botones.
+   ===================================================== */
+
+/* Estructura general de los formularios */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    background-color: #242424;
+    border: 2px solid #FFD928;
+    border-radius: 15px;
+
+    padding: 25px;
+    width: 350px;
+    margin: 30px auto;
+}
+
+/* Textos que identifican los campos */
+
+form label {
+    color: #FFD928;
+    font-weight: bold;
+}
+
+/* Campos donde el usuario ingresa información */
+
+form input {
+    padding: 12px;
+    border: 1px solid #FFD928;
+    border-radius: 8px;
+    background-color: #FFF6D5;
+    color: #171717;
+    font-size: 15px;
+}
+
+/* Botones para enviar los formularios */
+
+form button {
+    background-color: #FFD928;
+    color: #171717;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Efecto al pasar el cursor sobre los botones */
+
+form button:hover {
+    background-color: #FFB900;
+}
+
+
+/* =====================================================
+7. CONTENEDORES DE EJERCICIOS
+Organizan los formularios y los resultados para
+mostrarlos uno al lado del otro.
+   ===================================================== */
+
+.contenedor-ejercicio {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 30px auto;
+}
+
+/* Ajustes del formulario dentro del contenedor */
+
+.contenedor-ejercicio form {
+    margin: 0;
+    width: 350px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+8. TARJETAS DE RESULTADOS
+Presentan los resultados de los ejercicios dentro
+de una tarjeta independiente.
+   ===================================================== */
+
+.tarjeta-resultado {
+    background-color: #242424;
+    border: 2px solid #FFD928;
+    border-radius: 15px;
+    padding: 25px;
+    width: 350px;
+    box-sizing: border-box;
+    color: #FFF6D5;
+    text-align: center;
+}
+
+/* Títulos dentro de las tarjetas de resultados */
+
+.tarjeta-resultado h2 {
+    color: #FFD928;
+}
+
+.tarjeta-resultado h3 {
+    color: #FFD928;
+}
+
+
+/* =====================================================
+9. NAVEGACION
+Personaliza el enlace que permite volver al menú
+principal desde los ejercicios y el historial.
+   ===================================================== */
+
+.volver-inicio {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.volver-inicio a {
+    display: inline-block;
+    background-color: #FFD928;
+    color: #171717;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Efecto al pasar el cursor sobre el enlace */
+
+.volver-inicio a:hover {
+    background-color: #FFB900;
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+10. CABECERA Y BOTON DE HISTORIAL
+Organiza los elementos de la cabecera y personaliza
+el botón que permite acceder al historial.
+   ===================================================== */
+
+/* Distribución del título y el botón en la cabecera */
+
+.cabecera-contenido {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Apariencia del botón de historial */
+
+.boton-historial {
+    position: absolute;
+    right: 0;
+
+    background-color: #171717;
+    color: #FFD928;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+
+.boton-historial:hover {
+    background-color: #333333;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+11. ELIMINACION DE REGISTROS
+Personaliza el botón rojo que permite eliminar
+individualmente las actividades del historial.
+   ===================================================== */
+
+/* Apariencia del botón para eliminar */
+
+.boton-eliminar {
+    background-color: #D62828;
+    color: white;
+    border: 1px solid #A4161A;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    width: auto;
+    margin: 0;
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+
+.boton-eliminar:hover {
+    background-color: #A4161A;
+    transform: scale(1.03);
+}
+
+
+/* Contenedor que posiciona el botón de eliminación
+   al lado derecho de cada tarjeta del historial. */
+
+.zona-eliminar {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+/* Sobrescribe los estilos generales del formulario
+para que el formulario de eliminación no tenga
+el tamaño ni la apariencia de los otros formularios. */
+
+.zona-eliminar form {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Evita que el botón de eliminación ocupe todo el ancho */
+
+.zona-eliminar .boton-eliminar {
+    width: auto;
+    display: inline-block;
+}
